@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:59:37 by ilasrarf          #+#    #+#             */
-/*   Updated: 2023/10/24 14:23:55 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2023/10/25 03:42:44 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ private:
 	std::string nikename;
 	std::string darkestsecret;
 public:
-	void get_fistname();
-	void get_lastname();
-	void get_nikename();
-	void get_phonenumber();
-	void get_darkestsecret();
+	int get_phonenumber();
+	std::string get_firstname();
+	std::string get_lastname();
+	std::string get_nikename();
+	std::string get_darkestsecret();
 public:
-	void set_fistname();
-	void set_lastname();
-	void set_nikename();
 	void set_phonenumber(int phonenumber);
-	void set_darkestsecret();
+	void set_firstname(std::string firstname);
+	void set_lastname(std::string lastname);
+	void set_nikename(std::string nikename);
+	void set_darkestsecret(std::string darkestsecret);
 };
 
 class PhoneBook
