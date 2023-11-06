@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   funcs.cpp                                          :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:25:24 by ilasrarf          #+#    #+#             */
-/*   Updated: 2023/10/25 03:47:44 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:53:38 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "head.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-int Contact::get_phonenumber()
+std::string Contact::get_phonenumber()
 {
-    return (phonenumber);    
+    return (phonenumber);
 }
 
 std::string Contact::get_firstname()
 {
-    return (firstname);    
+    return (firstname);
 }
 
 std::string Contact::get_lastname()
 {
-    return (lastname);    
+    return (lastname);
 }
 
 std::string Contact::get_nikename()
@@ -37,7 +38,7 @@ std::string Contact::get_darkestsecret()
 }
 /*----------------------------------------------------------------------*/
 
-void Contact::set_phonenumber(int nbr)
+void Contact::set_phonenumber(std::string nbr)
 {
     phonenumber = nbr;
 }
