@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:17:58 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/01/25 15:18:07 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:57:47 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ Bureaucrat::Bureaucrat(int grade) : name("Bureaucrat")
     }
     catch(std::exception &e)
     {
-       std::cout << "grade out of range : { " << e.what() << " } your grade will be set to 1" << std::endl;
-       this->grade = 1;
+       std::cout << "grade out of range : { " << e.what() << " }" << std::endl;
     }
 }
 
@@ -69,13 +68,14 @@ void Bureaucrat::increment()
     this->grade -= 1;
     try
     {
-        if (grade < 1)
+        if (grade > 150)
+            throw (Bureaucrat::GradeTooHighException());
+        else if (grade < 1)
             throw (Bureaucrat::GradeTooLowException());
     }
     catch(std::exception &e)
     {
        std::cout << "grade out of range : " << e.what() << std::endl;
-       this->grade = 1;
     }
 }
 
@@ -86,11 +86,12 @@ void Bureaucrat::decrement()
     {
         if (grade > 150)
             throw (Bureaucrat::GradeTooHighException());
+        else if (grade < 1)
+            throw (Bureaucrat::GradeTooLowException());
     }
     catch(std::exception &e)
     {
        std::cout << "grade out of range : " << e.what() << std::endl;
-       this->grade = 150;
     }
 }
 

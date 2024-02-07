@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Conv.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:37:33 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/01/30 14:58:14 by ilasrarf         ###   ########.fr       */
+/*   Created: 2024/01/31 16:42:51 by ilasrarf          #+#    #+#             */
+/*   Updated: 2024/02/05 16:52:00 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#ifndef CONV_HPP
+#define CONV_HPP
 
-int main()
-{
-    Bureaucrat obj(60);
-    std::cout << obj << std::endl;
-    obj.decrement();
-    std::cout << obj << std::endl;
-    obj.increment();
-    std::cout << obj << std::endl;
-}
+#include<iostream>
+#include<string>
+#include <sstream>
+#include <iomanip>
+
+class ScalarConverter {
+    private:
+        ScalarConverter();
+        ~ScalarConverter();
+        ScalarConverter( const ScalarConverter& );
+        ScalarConverter& operator=( const ScalarConverter& );
+    public:
+        static void convert( const std::string );
+};
+
+#endif

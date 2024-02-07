@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 11:15:01 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/01/26 20:08:30 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:37:36 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <string>
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -33,7 +36,7 @@ class Bureaucrat
         void increment();
         void decrement();
         
-        void signForm();
+        void signForm( Form& );
 
         ~Bureaucrat();
     

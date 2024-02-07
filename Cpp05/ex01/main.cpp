@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:37:33 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/01/26 20:14:51 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:02:48 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 int main()
 {
-    try
-    {
-        Form obj();
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "err : " << e.what() << std::endl;
-    }
-    
+        Form obj("test", 10, 12);
+        Bureaucrat obj1(1);
+
+        obj1.signForm(obj);
 }

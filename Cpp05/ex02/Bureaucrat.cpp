@@ -6,12 +6,12 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:17:58 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/01/30 14:59:32 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:59:23 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1)
 {}
@@ -64,9 +64,22 @@ int Bureaucrat::getGrade() const
     return (this->grade);
 }
 
-void Bureaucrat::signForm( Form& obj )
+void Bureaucrat::signForm( AForm& obj )
 {
     obj.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << this->getName() << " not executed " << form.getName() << std::endl;
+    }
 }
 
 void Bureaucrat::increment()
@@ -77,7 +90,7 @@ void Bureaucrat::increment()
         if (grade > 150)
             throw (Bureaucrat::GradeTooHighException());
         else if (grade < 1)
-            throw (Bureaucrat::GradeTooLowException());;
+            throw (Bureaucrat::GradeTooLowException());
     }
     catch(std::exception &e)
     {
