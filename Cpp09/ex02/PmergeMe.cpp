@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:53:46 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/03/16 22:56:08 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/03/17 14:12:34 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,15 @@ PmergeMe::PmergeMe(const PmergeMe& copy) {
 
 PmergeMe& PmergeMe::operator=(const PmergeMe& obj) {
     if (this != &obj) {
+        this->vec_p = obj.vec_p;
+        this->vec_p_deq = obj.vec_p_deq;
         this->vec = obj.vec;
+        this->vec_f = obj.vec_f;
+        this->vec_deq = obj.vec_deq;
+        this->last_nb = obj.last_nb;
+        this->ld = obj.ld;
+        this->rus_vec = obj.rus_vec;
+        this->rus_deq = obj.rus_deq;
     }
     return (*this);
 }
@@ -169,16 +177,14 @@ void    ft_jacob_vec(std::vector<int>& vec_f, std::vector<std::pair<int, int> >&
         vec1[i] = vec[i].first;
     for(size_t i = 0; i < vec.size(); i++)
         vec2[i] = vec[i].second;
-    
+
     vec1.insert(vec1.begin(), vec2[0]);
     for (size_t i = 3; i < num.size(); i++)
     {
         it = std::lower_bound(vec1.begin(), vec1.end(), vec2[num[i] - 1]);
-        // std::cout << "\n--> " << num[i] - 1;
         vec1.insert(it, vec2[num[i] - 1]);
         for (size_t z = num[i] - 2; z > pre; z--)
         {
-            // std::cout << "\n--> " << z;
             it = std::lower_bound(vec1.begin(), vec1.end(), vec2[z]);
             vec1.insert(it, vec2[z]);
         }
@@ -327,9 +333,9 @@ void ft_gen_num(size_t size, std::vector<size_t>& num)
     num.push_back(1);
 
     size_t i = 2;
-    while ( i < size )
+    while ( 1 )
     {
-        if (num[i - 1] + (2 * num[i - 2]) > size)
+        if (num[i - 1] + (2 * num[i - 2]) >= size)
         {
             num.push_back(size);
             break ;
@@ -345,9 +351,9 @@ void ft_gen_num_deq(size_t size, std::deque<size_t>& num)
     num.push_back(1);
 
     size_t i = 2;
-    while ( i < size )
+    while ( 1 )
     {
-        if (num[i - 1] + (2 * num[i - 2]) > size)
+        if (num[i - 1] + (2 * num[i - 2]) >= size)
         {
             num.push_back(size);
             break ;

@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:50:54 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/03/16 21:52:42 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/03/17 13:27:50 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int ft_rang_year( std::string line )
     {
         if ( (std::atoi( (line.substr(0, 4)).c_str()) % 4 ) != 0)
         {
-            std::cout << " Hello ";
             if(std::atoi( (line.substr(8, 2)).c_str() ) > 28 || std::atoi( (line.substr(8, 2)).c_str() ) < 1 )
             {
                 std::cout << "Error: bad input => " << line << std::endl;
