@@ -1,45 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 10:59:32 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/02/08 13:17:58 by ilasrarf         ###   ########.fr       */
+/*   Created: 2024/02/08 15:49:25 by ilasrarf          #+#    #+#             */
+/*   Updated: 2024/02/29 14:41:36 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
-#include<iostream>
-#include<fstream>
-#include<sstream>
-#include<string>
+#include "easyfind.hpp"
 
-template <typename T>
-void swap ( T& a, T& b )
+int main()
 {
-    T tmp;
-    tmp = a;
-    a = b;
-    b = tmp;
-}
+    std::vector<int> values;
 
-template <typename I>
-I min ( I& a, I& b )
-{
-    if (a < b)
-        return a;
-    return b;
-}
+    values.push_back(1122);
+    values.push_back(212);
+    values.push_back(32);
+    values.push_back(45);
+    values.push_back(458);
+    values.push_back(3345);
 
-template <typename A>
-A max ( A& a, A& b )
-{
-    if (a > b)
-        return a;
-    return b;   
+    try
+    {
+        easyfind(values, 32);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
 }
-
-#endif

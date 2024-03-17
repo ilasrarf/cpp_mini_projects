@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 10:59:32 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/02/08 13:17:58 by ilasrarf         ###   ########.fr       */
+/*   Created: 2024/02/08 15:54:37 by ilasrarf          #+#    #+#             */
+/*   Updated: 2024/02/29 14:41:25 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+
 #include<iostream>
-#include<fstream>
-#include<sstream>
 #include<string>
+#include <algorithm>
+#include <vector>
 
 template <typename T>
-void swap ( T& a, T& b )
+void easyfind(T& values, int to_find)
 {
-    T tmp;
-    tmp = a;
-    a = b;
-    b = tmp;
-}
-
-template <typename I>
-I min ( I& a, I& b )
-{
-    if (a < b)
-        return a;
-    return b;
-}
-
-template <typename A>
-A max ( A& a, A& b )
-{
-    if (a > b)
-        return a;
-    return b;   
+    if(std::find(values.begin(), values.end(), to_find) != values.end())
+        std::cout << to_find << std::endl;
+    else
+        throw (std::out_of_range("---> not found"));
 }
 
 #endif

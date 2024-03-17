@@ -6,7 +6,7 @@
 /*   By: ilasrarf <ilasrarf@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 16:43:35 by ilasrarf          #+#    #+#             */
-/*   Updated: 2024/02/04 21:52:28 by ilasrarf         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:46:45 by ilasrarf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void ft_pars(char *av)
     {
         std::cout << "char: impossible\n";
         std::cout << "int: impossible\n";
-        std::cout << "float: " << str << "f" <<"\n";
+        std::cout << "float: " << str << "f" << "\n";
         std::cout << "doubel: " << str << "\n";
     }
     else if (str.length() > 1)
